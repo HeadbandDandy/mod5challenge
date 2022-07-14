@@ -1,14 +1,15 @@
 
 
-$(document).ready(function () {// tells engine to load 1)html & 2)css first.
-    //display current day & time.
+$(document).ready(function () {// page loads with this function
+    //current time and day
     $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a")); // use of moment.js
-    //assign saveBtn click listener for user input and time stamp??
+    //assign saveBtn click listener for user 
+    //added format for time on planner
     $(".saveBtn").on("click", function () {
         //get nearby values.
         console.log(this);
-        var text = $(this).siblings(".description").val(); // taken the change from the sibling html description attribute
-        var time = $(this).parent().attr("id"); // taken the change from the parent html id attribute
+        var text = $(this).siblings(".description").val();
+        var time = $(this).parent().attr("id"); 
 
         //set items in local storage.
         localStorage.setItem(time, text);
@@ -40,8 +41,7 @@ function hourTracker() {
         var blockHour = parseInt($(this).attr("id").split("hour")[1]);
         console.log( blockHour, currentHour)
 
-        //check if we've moved past this time, click into css/html given classes of past, present, or future
-        //below changes the colors of each section based on relevance to time. 
+        //else if statement for past, present, future, with color-coding 
         if (blockHour < currentHour) {
             $(this).addClass("past");
             $(this).removeClass("future");
@@ -59,5 +59,5 @@ function hourTracker() {
         }
     })
 }
-hourTracker(); //re-run function
+hourTracker(); //run function
 })
