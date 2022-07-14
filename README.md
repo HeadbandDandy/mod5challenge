@@ -1,6 +1,10 @@
 # mod5challenge
 Module 5 Challenge. Block Schedule.
 
+LiveUrl: https://headbanddandy.github.io/mod5challenge/
+
+Repository URL: https://github.com/HeadbandDandy/mod5challenge.git
+
 
 AS AN employee with a busy schedule
 I WANT to add important events to a daily planner
